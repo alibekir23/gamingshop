@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter Un nouveau Genre</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+<form [formGroup]="game_group" style="width: 1000px; padding-left:400px">
+  <legend>
+    ADD GAME
+  </legend>
+
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="inputLarge">Title</label>
+    <input type="text" class="form-control form-control-lg" formControlName="title" [(ngModel)]="game.title"
+           name="title" />
+  </div>
+  <div *ngIf="title.invalid && title.touched">
+    add title please
+  </div>
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="inputLarge">Description</label>
+    <input type="text" class="form-control form-control-lg" formControlName="description" name="description"
+           [(ngModel)]="game.description">
+
+  </div>
+  <div *ngIf="description.invalid && description.touched && description.errors?.minlength">
+    add description more tha 10
+  </div>
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="inputLarge">Image</label>
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <input type="file"  (change)="onSelectFile($event)" class="custom-file-input" id="inputGroupFile02" formControlName="image" name="image" [(ngModel)]="game.image"  required>
+        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+
+
+      </div>
+    </div>
+    <img [src]="img_url" width="200px">
+
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="inputLarge">Price</label>
+
+    <input type="text" class="form-control form-control-lg" formControlName="price" name="price"
+           [(ngModel)]="game.price" required/>
+  </div>
+  <div *ngIf="price.invalid && price.touched">
+    add price please
+  </div>
+
+  <label class="col-form-label col-form-label-lg" for="inputLarge">Genre</label>
+  <select id="genre_id"  name="genre_id" [(ngModel)]="game.genre_id"
+          formControlName="genre_id" class="form-control">
+    <option value="" disabled>select genre</option>
+    <option *ngFor="let item of listgenres" [value]="item.genre">
+      {{item.genre}}
+    </option>
+  </select>
+  <br>
+  <button (click)="add_game()" class="btn batn-primary"  [disabled]="game_group.invalid">ADD</button>
+</form>
+</body>
+
+</html>
