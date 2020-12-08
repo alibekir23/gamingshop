@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { GamesComponent } from './games/games.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
+import { GenresComponent } from './genres/genres.component';
+import { GameDetailComponent } from './game-detail/game-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AddGenreComponent } from './add-genre/add-genre.component';
     HomeComponent,
     GamesComponent,
     AddGameComponent,
-    AddGenreComponent
+    AddGenreComponent,
+    GenresComponent,
+    GameDetailComponent
   ],
   imports: [
     BrowserModule,

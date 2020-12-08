@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Game } from '../model/game';
+import { catchError, map, tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,30 @@ export class GameService {
   addGame(g: Game): Observable<Game>
   {
     return this.http.post<Game>(this.gameUrl, g, this.httpOptions);
+  }
+
+  getGame(): Observable<Game[]>
+  {
+    return this.http.get<Game[]>(this.gameUrl);
+  }
+
+
+  getdonationFromId(id: number): Observable<any> {
+
+    const url = `${this.gameUrl}/${id}`;
+    return this.http.get<Game>(url).pipe(
+      tap(selectedMovie => console.log(`selected movie = ${JSON.stringify(selectedMovie)}`)),
+    catchError(error => of(new Game()))
+  );
+  }
+  updateGame(movie: Game): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.put(`${this.gameUrl}/${movie.id}`, movie, httpOptions).pipe(
+    tap(updatedMovie => console.log(`updated movie = ${JSON.stringify(updatedMovie)}`)),
+    catchError(error => of(new Game()))
+  );
   }
 
 }

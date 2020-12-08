@@ -12,7 +12,7 @@ export class AddGenreComponent implements OnInit {
 
   g: Genre = new Genre();
 
-  url = "C:/workspace/AngularProjectCC/src/assets/images/";
+  url = "C:/src/assets/images/";
   img_url = "../assets/images/";
   listgenres: Genre[] = [];
 

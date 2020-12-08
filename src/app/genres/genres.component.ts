@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import {Game} from '../model/game';
-import { GameService } from '../shared/game.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Genre } from '../model/Genre';
+import { GenreService } from '../shared/genre.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-genres',
+  templateUrl: './genres.component.html',
+  styleUrls: ['./genres.component.css']
 })
-export class HomeComponent implements OnInit {
-  listgames: Game[] = [];
-  url = "assets/home/dummy/";
+export class GenresComponent implements OnInit {
+  listgenres: Genre[] = [];
+  g: Genre = new Genre();
+  imageSrc: string;
   i: any;
-  constructor(private g: GameService , private router: Router ,private sanitizer: DomSanitizer) { }
+  url = "assets/images/";
+  constructor(private gs: GenreService , private router: Router ,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.g.getGame().subscribe(
-      (data:Game[])=>{this.listgames= data
+    this.gs.getGenres().subscribe(
+      (data:Genre[])=>{this.listgenres= data
       }, (err) => {
         console.log(err);
       }
-
     );
   }
 
@@ -38,8 +39,7 @@ export class HomeComponent implements OnInit {
   }
 
   sanitizeImageUrl(imageUrl: string): SafeUrl {
-
-    return this.sanitizer.bypassSecurityTrustUrl( "assets/home/dummy/"+imageUrl.substring(12));
+    return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
 
   readUrl(event:any) {
@@ -53,9 +53,5 @@ export class HomeComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
-
-
-
-
 
 }
