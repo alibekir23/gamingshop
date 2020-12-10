@@ -8,17 +8,20 @@
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
   <!------ Include the above in your HEAD tag ---------->
 </head>
 
 <body>
+<app-header-admin></app-header-admin>
+<section>
 <form [formGroup]="game_group" style="width: 1000px; padding-left:400px">
   <legend>
     ADD GAME
   </legend>
 
   <div class="form-group">
-    <label class="col-form-label col-form-label-lg" for="inputLarge">Title</label>
+    <label class="col-form-label col-form-label-lg" >Title</label>
     <input type="text" class="form-control form-control-lg" formControlName="title" [(ngModel)]="game.title"
            name="title" />
   </div>
@@ -26,7 +29,7 @@
     add title please
   </div>
   <div class="form-group">
-    <label class="col-form-label col-form-label-lg" for="inputLarge">Description</label>
+    <label class="col-form-label col-form-label-lg" >Description</label>
     <input type="text" class="form-control form-control-lg" formControlName="description" name="description"
            [(ngModel)]="game.description">
 
@@ -34,12 +37,21 @@
   <div *ngIf="description.invalid && description.touched && description.errors?.minlength">
     add description more tha 10
   </div>
+
   <div class="form-group">
-    <label class="col-form-label col-form-label-lg" for="inputLarge">Image</label>
+    <label class="col-form-label col-form-label-lg" >Video</label>
+    <input type="text" class="form-control form-control-lg" formControlName="video" [(ngModel)]="game.video"
+           name="video" />
+  </div>
+  <div *ngIf="title.invalid && title.touched">
+    add video link please
+  </div>
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" >Image</label>
     <div class="input-group mb-3">
       <div class="custom-file">
-        <input type="file"  (change)="onSelectFile($event)" class="custom-file-input" id="inputGroupFile02" formControlName="image" name="image" [(ngModel)]="game.image"  required>
-        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+        <input type="file"  (change)="onSelectFile($event)" class="custom-file-input" formControlName="cover" name="cover" [(ngModel)]="game.cover"  required>
+        <label class="custom-file-label" >Choose file</label>
 
 
       </div>
@@ -70,6 +82,7 @@
   <br>
   <button (click)="add_game()" class="btn batn-primary"  [disabled]="game_group.invalid">ADD</button>
 </form>
+</section>
 </body>
 
 </html>

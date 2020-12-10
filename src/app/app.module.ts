@@ -11,6 +11,10 @@ import { AddGameComponent } from './add-game/add-game.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
 import { GenresComponent } from './genres/genres.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderAdminComponent } from './header-admin/header-admin.component';
+import { UpdateGameComponent } from './update-game/update-game.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { GameDetailComponent } from './game-detail/game-detail.component';
     AddGameComponent,
     AddGenreComponent,
     GenresComponent,
-    GameDetailComponent
+    GameDetailComponent,
+    HeaderComponent,
+    FooterComponent,
+    HeaderAdminComponent,
+    UpdateGameComponent
   ],
   imports: [
     BrowserModule,

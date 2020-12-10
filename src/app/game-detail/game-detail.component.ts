@@ -14,10 +14,7 @@ import {Game} from '../model/game';
 export class GameDetailComponent implements OnInit {
   @Input() game: Game;
 
-  constructor(private route: ActivatedRoute,
-               private service: GameService,
-               private location: Location,
-               private sanitizer: DomSanitizer) { }
+  constructor(private route: ActivatedRoute, private service: GameService, private location: Location, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getMovieFromRoute();
@@ -37,5 +34,11 @@ export class GameDetailComponent implements OnInit {
   save(): void {
     this.service.updateGame(this.game).subscribe(() => this.goBack());
   }
+
+  sanitizeImageUrl(imageUrl: string): SafeUrl {
+
+    return this.sanitizer.bypassSecurityTrustUrl( "assets/home/dummy/"+imageUrl.substring(12));
+  }
+
 
 }

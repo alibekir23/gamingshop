@@ -47,4 +47,11 @@ export class GameService {
   );
   }
 
+  deleteGame(g: Game |number):  Observable<Game>
+  {
+    const id = typeof g === 'number' ? g : g.id;
+    const url = this.gameUrl + '/' + id;
+    return this.http.delete<Game>(url);
+  }
+
 }

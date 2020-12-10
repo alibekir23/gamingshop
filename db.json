@@ -18,51 +18,20 @@
   },
   "Genre": [
     {
-      "genre": "Aventure",
-      "description": "Description Aventure",
-      "image": "C:\\fakepath\\aventure.png",
-      "id": 1
-    },
-    {
       "genre": "Sport",
       "description": "Description Sport",
-      "image": "C:\\fakepath\\sport.png",
       "id": 2
     },
     {
       "id": 3,
       "genre": "Arcade",
-      "description": "Arcade",
-      "image": "C:\\fakepath\\157429-image2_450x450.png"
+      "description": "Arcade"
     },
     {
       "genre": "jhgfdsfg",
       "description": "fgdsqdfg",
-      "image": "C:\\fakepath\\base-de-donnees.png",
       "id": 4
     }
   ],
-  "Game": [
-
-    {
-      "title": "hgfdsfghg",
-      "description": "jhgfdfghjk",
-      "image": "C:\\fakepath\\gta5.jpg",
-      "price": "25",
-      "genre_id": "Arcade",
-      "id": 7
-    },
-    {
-      "title": "test1",
-      "description": "hgfrtyuiuh",
-      "image": "C:\\fakepath\\gta5.jpg",
-      "id": 8
-    },
-    {
-      "title": "test1",
-      "description": "hgfrtyuiuh",
-      "id": 9
-    }
-
-  ]
+  "Game": []
 }

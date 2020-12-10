@@ -1,27 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {Component, Input, OnInit} from '@angular/core';
 import {Game} from '../model/game';
-import {Genre} from '../model/Genre';
-import { GenreService } from '../shared/genre.service';
-import { GameService } from '../shared/game.service';
-import { Router } from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
+import {GameService} from '../shared/game.service';
 import {Location} from '@angular/common';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Genre} from '../model/Genre';
+import {GenreService} from '../shared/genre.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-game',
-  templateUrl: './add-game.component.html',
-  styleUrls: ['./add-game.component.css']
+  selector: 'app-update-game',
+  templateUrl: './update-game.component.html',
+  styleUrls: ['./update-game.component.css']
 })
-export class AddGameComponent implements OnInit {
-
+export class UpdateGameComponent implements OnInit {
+  @Input() game: Game;
   game_form: FormBuilder = new FormBuilder();
   game_group: FormGroup;
-  game: Game = new Game();
   listgenres: Genre[] = [];
   url = "C:/Users/ali/Desktop/4TWIN2/Application coté client/angular/gamingshop/src/assets/home/dummy";
   img_url = "../assets/home/dummy/";
-
-  constructor(private Gs: GameService, private location: Location,private router: Router , private gs : GenreService) {
+  constructor(private router: Router,private route: ActivatedRoute, private service: GameService, private location: Location, private sanitizer: DomSanitizer,private gs : GenreService) {
     this.game_group = new FormGroup({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.minLength(10)),
@@ -31,11 +31,10 @@ export class AddGameComponent implements OnInit {
       video: new FormControl('', Validators.required),
     });
 
-
   }
 
   ngOnInit(): void {
-
+    this.getMovieFromRoute();
     this.gs.getGenres().subscribe(
       (data:Genre[])=>{this.listgenres= data
       }, (err) => {
@@ -43,7 +42,6 @@ export class AddGameComponent implements OnInit {
       }
     );
   }
-
   get id() { return this.game_group.get('id'); }
   get title() { return this.game_group.get('title'); }
   get description() { return this.game_group.get('description'); }
@@ -52,20 +50,29 @@ export class AddGameComponent implements OnInit {
   get price() { return this.game_group.get('price'); }
   get genre_id() { return this.game_group.get('genre_id'); }
 
+  getMovieFromRoute(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    console.log(`this.route.snapshot.paramMap = ${JSON.stringify(this.route.snapshot.paramMap)}`);
+    //Call service to "get movie from id" ?
+    this.service.getdonationFromId(id).subscribe(game => this.game = game);
 
-  add_game() {
+  }
 
-      this.Gs.addGame(this.game).subscribe(resultat => {
-          alert("game added succesfully!")
-          this.router.navigateByUrl('/games');
-        },
-        (err) => {
-          alert("error!")
-          console.log(err);
-        });
+  save(): void {
+    this.service.updateGame(this.game).subscribe(resultat => {
+        alert("game updated succesfully!")
+        this.router.navigateByUrl('/games');
+      },
+      (err) => {
+        alert("error!")
+        console.log(err);
+      });
 
+  }
 
+  sanitizeImageUrl(imageUrl: string): SafeUrl {
 
+    return this.sanitizer.bypassSecurityTrustUrl( "assets/home/dummy/"+imageUrl.substring(12));
   }
 
   onSelectFile(e)

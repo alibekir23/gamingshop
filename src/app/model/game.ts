@@ -7,8 +7,8 @@ export class Game
   id: number;
   title: string;
   description: string;
-  cover: string;
-  image: Blob;
+  cover: Blob;
+  video: string;
   price: number;
   genre_id: Genre;
   review_id: Review;
