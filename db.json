@@ -18,20 +18,41 @@
   },
   "Genre": [
     {
-      "genre": "Sport",
-      "description": "Description Sport",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "genre": "Arcade",
-      "description": "Arcade"
-    },
-    {
       "genre": "jhgfdsfg",
       "description": "fgdsqdfg",
       "id": 4
+    },
+    {
+      "genre": "test",
+      "description": "dsfghg",
+      "id": 5
+    },
+    {
+      "genre": "sport",
+      "description": "dfgfdsfgds",
+      "id": 6
     }
   ],
-  "Game": []
+  "Game": [
+    {
+      "title": "dragonball",
+      "description": "DragonBall Xenoverse PC Game is developed by DIMPS and is published by BANDAI NAMCO Games. Dragon Ball Xenoverse game was released on 26th February 2015. Dragon Ball Xenoverse unlike other games of the Dragon Ball series has a new story and the characters  can be customized by the player. The player can create their own Dragon Ball characters which will feature in the entire game. Different attributes of the characters like their gender, race hairs and body can be set easily. You can also download valkyria chronicles which is another impressive action game.",
+      "video": "https://www.youtube.com/embed/1Y-A1kUCvzY",
+      "cover": "C:\\fakepath\\DRAGON-BALL-Z-KAKAROT-pc-download-free.jpg",
+      "price": "55",
+      "genre_id": "Arcade",
+      "id": 1,
+      "like": 5
+    },
+    {
+      "title": "crysis",
+      "description": "Crysis is a first person shooter game developed by the Crytek, the proud developers of the award winning game Far cry 2. The year is 2020 and near the coast of East Philippines in Lingshan island a massive alien is discovered in the mountain. You have been given the assignment to destroy this extraterrestrial as well as the North Korean forces.",
+      "video": "https://www.youtube.com/embed/u6gsOQ8HZAU",
+      "cover": "C:\\fakepath\\Crysis-Remastered-pc-free-download.jpg",
+      "price": "40",
+      "genre_id": "Arcade",
+      "id": 2,
+      "like": 4
+    }
+  ]
 }

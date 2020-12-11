@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { GameService } from '../shared/game.service';
@@ -13,8 +13,8 @@ import {Game} from '../model/game';
 })
 export class GameDetailComponent implements OnInit {
   @Input() game: Game;
-
-  constructor(private route: ActivatedRoute, private service: GameService, private location: Location, private sanitizer: DomSanitizer) { }
+  @Output() callParentFunction:EventEmitter<any>=new EventEmitter<any>()
+  constructor(private route: ActivatedRoute, private service: GameService, private location: Location, public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getMovieFromRoute();
@@ -38,6 +38,11 @@ export class GameDetailComponent implements OnInit {
   sanitizeImageUrl(imageUrl: string): SafeUrl {
 
     return this.sanitizer.bypassSecurityTrustUrl( "assets/home/dummy/"+imageUrl.substring(12));
+  }
+
+  onClickCart()
+  {
+    this.callParentFunction.emit("test");
   }
 
 

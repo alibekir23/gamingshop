@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Game} from '../model/game';
 import {GameService} from '../shared/game.service';
 import {Router} from '@angular/router';
-import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+import {DomSanitizer, SafeUrl,SafeResourceUrl} from '@angular/platform-browser';
 import {Location} from '@angular/common';
+import {Directive, Renderer2, ElementRef} from '@angular/core';
+
+
 
 
 @Component({
@@ -11,11 +14,16 @@ import {Location} from '@angular/common';
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.css']
 })
+
+
 export class GamesComponent implements OnInit {
   listgames: Game[] = [];
   url = "assets/home/dummy/";
   i: any;
-  constructor(private g: GameService,private router: Router ,private sanitizer: DomSanitizer, private location: Location) { }
+  term: string;
+  constructor(private g: GameService,private router: Router ,public sanitizer: DomSanitizer, private location: Location) {
+
+  }
 
   ngOnInit(): void {
     this.g.getGame().subscribe(
@@ -26,6 +34,7 @@ export class GamesComponent implements OnInit {
 
     );
   }
+
 
   delete(id:number){
     console.log('delete');

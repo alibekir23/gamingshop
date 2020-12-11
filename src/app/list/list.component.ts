@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import {Game} from '../model/game';
-import { GameService } from '../shared/game.service';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import {GameService} from '../shared/game.service';
+import {Router} from '@angular/router';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ListComponent implements OnInit {
+
   listgames: Game[] = [];
   url = "assets/home/dummy/";
   i: any;
-  l:any=4;
+  @Input() l;
+  @Output() callParentFunction:EventEmitter<any>=new EventEmitter<any>();
   constructor(private g: GameService , private router: Router ,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -24,12 +26,6 @@ export class HomeComponent implements OnInit {
       }
 
     );
-  }
-
-
-  parenFunction(data)
-  {
-    this.l=data;
   }
 
   onSelectFile(e)
@@ -60,9 +56,9 @@ export class HomeComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+onClickAll()
+{
+  this.callParentFunction.emit(this.listgames.length);
 
-
-
-
-
+}
 }

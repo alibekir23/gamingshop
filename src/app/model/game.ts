@@ -12,4 +12,5 @@ export class Game
   price: number;
   genre_id: Genre;
   review_id: Review;
+  like:number=0;
 }

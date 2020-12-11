@@ -1,0 +1,34 @@
+<app-header [hidden]="l>3"></app-header>
+<section>
+  <main class="main-content">
+    <div class="container">
+      <div class="page1">
+
+<header>
+  <h2 class="section-title">Games</h2>
+  <a href="#" class="all" (click)="onClickAll()" >Show All</a>
+</header>
+            <div class="product-list">
+              <div *ngFor="let g of listgames |slice:0:l">
+                <div class="product" >
+                  <div class="inner-product">
+                    <div class="figure-image">
+                      <a href="single.html"><img [src]='sanitizeImageUrl(g.cover.toString())'  alt="Game 1"></a>
+                    </div>
+                    <h3 class="product-title"><a href="#">{{g.title}}</a></h3>
+                    <small class="price">${{g.price}}</small>
+                    <p>{{g.description.substring(0,100)}}</p>
+                    <a href="cart.html" class="button">Add to cart</a>
+                    <a routerLink="/detail/{{g.id}}" class="button muted">Read Details</a>
+                  </div>
+                </div> <!-- .product -->
+
+              </div>
+
+            </div> <!-- .product-list -->
+      </div>
+    </div> <!-- .container -->
+  </main> <!-- .main-content -->
+</section>
+
+<app-footer [hidden]="l>3"></app-footer>

@@ -12,8 +12,6 @@ export class AddGenreComponent implements OnInit {
 
   g: Genre = new Genre();
 
-  url = "C:/src/assets/images/";
-  img_url = "../assets/images/";
   listgenres: Genre[] = [];
 
   constructor(private router:Router, private gs:GenreService,private genre_service: GenreService) { }
@@ -40,16 +38,6 @@ export class AddGenreComponent implements OnInit {
   }
 
 
-  onSelectFile(e)
-  {
-    if (e.target.files)
-    {
-      var reader = new FileReader()
-      reader.readAsDataURL(e.target.files[0]);
-      reader.onload=(event: any)=> {
-        this.img_url = event.target.result;
-      }
-    }
-  }
+
 
 }

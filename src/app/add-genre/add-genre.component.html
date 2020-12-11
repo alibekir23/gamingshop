@@ -1,1 +1,47 @@
-<p>add-genre works!</p>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+  <title>Ajouter Un nouveau Genre</title>
+</head>
+<body>
+<app-header></app-header>
+
+<form style="width: 1000px; padding-left:400px"  #form="ngForm">
+  <legend>
+    ADD GENRE
+  </legend>
+
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" >Genre</label>
+    <input class="form-control form-control-lg" type="text" name="genre" [(ngModel)]="g.genre" #genre="ngModel" required >
+    <div *ngIf="genre.invalid && genre.touched">this field is required</div>
+  </div>
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" >Description</label>
+    <input class="form-control form-control-lg" minlength="10" type="text" name="description" [(ngModel)]="g.description" #description="ngModel" required="">
+    <div *ngIf=" description.errors?.minlength">
+      at least 10 characters
+    </div>
+  </div>
+  <br>
+  <button (click)="save()" class="btn batn-primary"  [disabled]="form.invalid">ADD</button>
+</form>
+</body>
+</html>

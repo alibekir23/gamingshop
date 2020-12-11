@@ -2,26 +2,27 @@
 <div id="site-content">
  <app-header></app-header>
 <section>
-  <div class="row">
+  <div class="row" [hidden]="l>4">
     <div class="home-slider">
       <ul class="slides">
-        <li data-bg-image="assets/home/dummy/gta5.jpg">
-          <div class="container" >
-            <div *ngFor="let g of listgames | slice:2:3; let i=index">
-            <div class="slide-content" >
-              <h2 class="slide-title">{{g.title}}</h2>
-              <small class="slide-subtitle">${{g.price}}</small>
-              <p>{{g.description}}</p>
-              <a routerLink="/detail/{{g.id}}"  class="button">Read Details</a>
-            </div>
 
-            <img [src]='sanitizeImageUrl(g.cover.toString())' class="slide-image">
+        <li >
+          <div class="container" >
+            <div *ngFor="let g of listgames | slice:0:1">
+              <div class="slide-content" >
+                <h2 class="slide-title">{{g.title}}</h2>
+                <small class="slide-subtitle">${{g.price}}</small>
+                <p>{{g.description}}</p>
+                <a routerLink="/detail/{{g.id}}" class="button">Read Details</a>
+              </div>
+
+              <img [src]='sanitizeImageUrl(g.cover.toString())' class="slide-image">
             </div>
           </div>
         </li>
-        <li data-bg-image="assets/home/dummy/gta5.jpg">
+        <li >
           <div class="container" >
-            <div *ngFor="let g of listgames | slice:2:3; let i=index">
+            <div *ngFor="let g of listgames | slice:2:3">
               <div class="slide-content" >
                 <h2 class="slide-title">{{g.title}}</h2>
                 <small class="slide-subtitle">${{g.price}}</small>
@@ -33,9 +34,9 @@
             </div>
           </div>
         </li>
-        <li data-bg-image="assets/home/dummy/gta5.jpg">
+        <li >
           <div class="container" >
-            <div *ngFor="let g of listgames | slice:4:5; let i=index">
+            <div *ngFor="let g of listgames | slice:1:2">
               <div class="slide-content" >
                 <h2 class="slide-title">{{g.title}}</h2>
                 <small class="slide-subtitle">${{g.price}}</small>
@@ -52,44 +53,16 @@
   </div>
 </section>
 
-<section>
-  <main class="main-content">
-    <div class="container">
-      <div class="page">
+
 
 
 
 
 
         <section>
-          <header>
-            <h2 class="section-title">promotion</h2>
-            <a href="#" class="all">Show All</a>
-          </header>
-          <div class="product-list">
-<div *ngFor="let g of listgames | slice:0:4; let i=index">
-            <div class="product">
-              <div class="inner-product">
-                <div class="figure-image">
-                  <a href="single.html"><img [src]='sanitizeImageUrl(g.cover.toString())'  alt="Game 1"></a>
-                </div>
-                <h3 class="product-title"><a href="#">{{g.title}}</a></h3>
-                <small class="price">${{g.price}}</small>
-                <p>{{g.description}}</p>
-                <a href="cart.html" class="button">Add to cart</a>
-                <a routerLink="/detail/{{g.id}}" class="button muted">Read Details</a>
-              </div>
-            </div> <!-- .product -->
-
-          </div>
-
-          </div> <!-- .product-list -->
-
+        <app-list [l]="l" (callParentFunction)="parenFunction($event)" ></app-list>
         </section>
-      </div>
-    </div> <!-- .container -->
-  </main> <!-- .main-content -->
-</section>
+
 <app-footer></app-footer>
 </div>
 
