@@ -14,6 +14,7 @@ export class ListComponent implements OnInit {
   listgames: Game[] = [];
   url = "assets/home/dummy/";
   i: any;
+  hover:any;
   @Input() l;
   @Output() callParentFunction:EventEmitter<any>=new EventEmitter<any>();
   constructor(private g: GameService , private router: Router ,private sanitizer: DomSanitizer) { }

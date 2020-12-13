@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   url = "assets/home/dummy/";
   i: any;
   l:any=4;
+  hover:any;
   constructor(private g: GameService , private router: Router ,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {

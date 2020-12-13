@@ -18,29 +18,29 @@
   },
   "Genre": [
     {
-      "genre": "jhgfdsfg",
-      "description": "fgdsqdfg",
+      "genre": "adventure",
+      "description": "An adventure game is a video game in which the player assumes the role of a protagonist in an interactive story driven by exploration and puzzle-solving. The genre's focus on story allows it to draw heavily from other narrative-based media, literature and film, encompassing a wide variety of literary genres.",
+      "id": 1
+    },
+    {
+      "genre": "fps",
+      "description": "First-person shooter (FPS) is a video game genre centered on gun and other weapon-based combat in a first-person perspective; that is, the player experiences the action through the eyes of the protagonist. The genre shares common traits with other shooter games, which in turn makes it fall under the heading action game. Since the genre's inception, advanced 3D and pseudo-3D graphics have challenged hardware development, and multiplayer gaming has been integral.",
+      "id": 2
+    },
+    {
+      "genre": "action",
+      "description": "An action game is a video game genre that emphasizes physical challenges, including hand–eye coordination and reaction-time. The genre includes a large variety of sub-genres, such as fighting games, beat 'em ups, shooter games and platform games. Multiplayer online battle arena and some real-time strategy games are also considered action games.",
       "id": 4
-    },
-    {
-      "genre": "test",
-      "description": "dsfghg",
-      "id": 5
-    },
-    {
-      "genre": "sport",
-      "description": "dfgfdsfgds",
-      "id": 6
     }
   ],
   "Game": [
     {
       "title": "dragonball",
-      "description": "DragonBall Xenoverse PC Game is developed by DIMPS and is published by BANDAI NAMCO Games. Dragon Ball Xenoverse game was released on 26th February 2015. Dragon Ball Xenoverse unlike other games of the Dragon Ball series has a new story and the characters  can be customized by the player. The player can create their own Dragon Ball characters which will feature in the entire game. Different attributes of the characters like their gender, race hairs and body can be set easily. You can also download valkyria chronicles which is another impressive action game.",
+      "description": "BE THE HOPE OF THE UNIVERSE • Experience the story of DRAGON BALL Z from epic events to light-hearted side quests, including never-before-seen story moments that answer some burning questions of DRAGON BALL lore for the first time! • Play through iconic DRAGON BALL Z battles on a scale unlike any other. Fight across vast battlefields with destructible environments and experience epic boss battles against the most iconic foes (Raditz, Frieza, Cell etc…). Increase your power level through RPG mechanics and rise to the challenge! • Don’t just fight as Z Fighters. Live like them! Fish, fly, eat, train, and battle your way through the DRAGON BALL Z sagas, making friends and building relationships with a massive cast of DRAGON BALL characters. Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT! Beyond the epic battles, experience life in the DRAGON BALL Z world as you fight, fish, eat, and train with Goku, Gohan, Vegeta and others. Explore the new areas and adventures as you advance through the story and form powerful bonds with other heroes from the DRAGON BALL Z universe.",
       "video": "https://www.youtube.com/embed/1Y-A1kUCvzY",
       "cover": "C:\\fakepath\\DRAGON-BALL-Z-KAKAROT-pc-download-free.jpg",
       "price": "55",
-      "genre_id": "Arcade",
+      "genre_id": "adventure",
       "id": 1,
       "like": 5
     },
@@ -53,6 +53,46 @@
       "genre_id": "Arcade",
       "id": 2,
       "like": 4
+    },
+    {
+      "like": 0,
+      "title": "godfall",
+      "description": "Godfall is a brand-new, next-gen looter-slasher, set in a bright fantasy universe filled with heroic knights and arcane magic.  Embark on adventure in a fantasy action RPG that utilizes high-impact third-person melee combat to engage players as they hunt for loot, don legendary armor sets and defeat vicious enemies. Face challenging missions that reward you with head-turning loot as you vanquish the armies that stand against you.",
+      "video": "https://www.youtube.com/embed/P9p_t408_vA",
+      "cover": "C:\\fakepath\\Godfall-pc-free-download.jpg",
+      "price": "69",
+      "genre_id": "adventure",
+      "id": 3
+    },
+    {
+      "like": 0,
+      "title": "batman arkham knight",
+      "description": "Batman Arkham Knight has been set in the Gotham City. In which player can roam freely here and there. Different gadgets and gameplay elements which players have experienced in previous Arkham games have made their return in this game. Player can take Batman on longer flights throughout the city in this game . During glides Batman can use different gadgets like batarangs and line launcher etc. This game has got a very impressive combat system. Which will let you launch some basic attacks like strikes, dodging and counter etc. You can also download Batman Arkham City.",
+      "video": "https://www.youtube.com/embed/dxa34RatmSc",
+      "cover": "C:\\fakepath\\Batman-Arkham-Knight-pc-free-download.jpg",
+      "price": "50",
+      "genre_id": "action",
+      "id": 4
+    },
+    {
+      "like": 0,
+      "title": "Detroit become human",
+      "description": "Detroit: Become Human, the award-winning video game production from Quantic Dream, is finally available on Steam! Featuring world-renowned actors including Jesse Williams (Grey’s Anatomy), Clancy Brown (Carnivale), Lance Henriksen (Aliens), Bryan Dechart (True Blood) and Valorie Curry (Twilight).  WHAT MAKES US HUMAN?  Detroit 2038. Technology has evolved to a point where human like androids are everywhere. They speak, move and behave like human beings, but they are only machines serving humans. Play three distinct androids and see a world at the brink of chaos – perhaps our future – through their eyes. Your very decisions will dramatically alter how the game’s intense, branching narrative plays out. You will face moral dilemmas and decide who lives or dies. With thousands of choices and dozens of possible endings, how will you affect the future of Detroit and humanity’s destiny?",
+      "video": "https://www.youtube.com/embed/JQCuASnY9Tg",
+      "cover": "C:\\fakepath\\Detroit-Become-Human-free-download.jpg",
+      "price": "55",
+      "genre_id": "adventure",
+      "id": 5
+    },
+    {
+      "like": 0,
+      "title": "cyberpunk 2077",
+      "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.",
+      "video": "https://www.youtube.com/embed/BO8lX3hDU30",
+      "cover": "C:\\fakepath\\Cyberpunk-2077-pc-free-download.jpg",
+      "price": "60",
+      "genre_id": "action",
+      "id": 6
     }
   ]
 }

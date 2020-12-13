@@ -13,6 +13,7 @@ import {Game} from '../model/game';
 })
 export class GameDetailComponent implements OnInit {
   @Input() game: Game;
+  hover:any;
   @Output() callParentFunction:EventEmitter<any>=new EventEmitter<any>()
   constructor(private route: ActivatedRoute, private service: GameService, private location: Location, public sanitizer: DomSanitizer) { }
 
@@ -45,5 +46,8 @@ export class GameDetailComponent implements OnInit {
     this.callParentFunction.emit("test");
   }
 
-
+  like()
+  {
+    alert("You liked this game!");
+  }
 }

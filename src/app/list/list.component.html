@@ -8,8 +8,9 @@
   <h2 class="section-title">Games</h2>
   <a href="#" class="all" (click)="onClickAll()" >Show All</a>
 </header>
+
             <div class="product-list">
-              <div *ngFor="let g of listgames |slice:0:l">
+              <div *ngFor="let g of listgames |slice:0:l;let i = index">
                 <div class="product" >
                   <div class="inner-product">
                     <div class="figure-image">

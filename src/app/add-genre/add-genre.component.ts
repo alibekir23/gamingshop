@@ -28,7 +28,7 @@ export class AddGenreComponent implements OnInit {
 
   save(){ this.genre_service.addGenre(this.g).subscribe(
     resultat => {
-      console.log("genre added");
+      alert("genre added succesfully!")
       this.router.navigateByUrl('/genres');
     }, (err) => {
       console.log(err);

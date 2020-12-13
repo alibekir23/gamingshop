@@ -12,7 +12,7 @@ import {Location} from '@angular/common';
 })
 export class GenresComponent implements OnInit {
   listgenres: Genre[] = [];
-
+  term: string;
   i: any;
   constructor(private g: GenreService,private router: Router ,private location: Location) { }
 

@@ -37,7 +37,7 @@ export class GamesComponent implements OnInit {
 
 
   delete(id:number){
-    console.log('delete');
+
     this.g.deleteGame(id).subscribe(resultat => {
         alert("game deleted succesfully!")
         this.router.navigateByUrl('/games');

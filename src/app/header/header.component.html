@@ -21,7 +21,7 @@
         <button class="toggle-menu"><i class="fa fa-bars"></i></button>
         <ul class="menu">
           <li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
-          <li class="menu-item"><a [routerLink]="[ '' ]">Home</a></li>
+          <li class="menu-item"><a href="index.html">Home</a></li>
           <li class="menu-item"><a [routerLink]="[ '/ListGames' ]">Games</a></li>
 
 
@@ -62,17 +62,14 @@
         <button class="toggle-menu"><i class="fa fa-bars"></i></button>
         <ul class="menu">
           <li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
-          <li class="menu-item"><a [routerLink]="[ '' ]" >Home</a></li>
+          <li class="menu-item"><a href="index.html">Home</a></li>
           <li class="menu-item"><a [routerLink]="[ '/ListGames' ]" >Games</a></li>
           <li class="menu-item"><a [routerLink]="[ '/games' ]" [hidden]="user.uid.length<1">Games list</a></li>
           <li class="menu-item"><a [routerLink]="[ '/genres' ]" [hidden]="user.uid.length<1">Genres list</a></li>
 
 
         </ul> <!-- .menu -->
-        <div class="search-form">
-          <label><img src="assets/home/images/icon-search.png"></label>
-          <input type="text" placeholder="Search...">
-        </div> <!-- .search-form -->
+
 
         <div class="mobile-navigation"></div> <!-- .mobile-navigation -->
       </div> <!-- .main-navigation -->

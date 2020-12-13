@@ -13,7 +13,7 @@
                 <h2 class="slide-title">{{g.title}}</h2>
                 <small class="slide-subtitle">${{g.price}}</small>
                 <p>{{g.description}}</p>
-                <a routerLink="/detail/{{g.id}}" class="button">Read Details</a>
+                <a routerLink="/detail/{{g.id}}"  class="button" (mouseover)="hover=true" (mouseleave)="hover=false" [ngStyle]="{backgroundColor: hover==true ? 'red' : '' }">Read Details</a>
               </div>
 
               <img [src]='sanitizeImageUrl(g.cover.toString())' class="slide-image">
@@ -27,7 +27,8 @@
                 <h2 class="slide-title">{{g.title}}</h2>
                 <small class="slide-subtitle">${{g.price}}</small>
                 <p>{{g.description}}</p>
-                <a routerLink="/detail/{{g.id}}"  class="button">Read Details</a>
+                <a routerLink="/detail/{{g.id}}"  class="button" (mouseover)="hover=true" (mouseleave)="hover=false" [ngStyle]="{backgroundColor: hover==true ? 'red' : '' }">Read Details</a>
+
               </div>
 
               <img [src]='sanitizeImageUrl(g.cover.toString())' class="slide-image">
@@ -40,8 +41,8 @@
               <div class="slide-content" >
                 <h2 class="slide-title">{{g.title}}</h2>
                 <small class="slide-subtitle">${{g.price}}</small>
-                <p>{{g.description}}</p>
-                <a routerLink="/detail/{{g.id}}"  class="button">Read Details</a>
+                <p >{{g.description}}</p>
+                <a routerLink="/detail/{{g.id}}"  class="button" (mouseover)="hover=true" (mouseleave)="hover=false" [ngStyle]="{backgroundColor: hover==true ? 'red' : '' }">Read Details</a>
               </div>
 
               <img [src]='sanitizeImageUrl(g.cover.toString())' class="slide-image">
